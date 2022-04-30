@@ -1,0 +1,333 @@
+1. Swap two numbers using temporary variable.
+
+public class Swap {
+    public static void main(String[] args) {
+        float first = 1.20f, second = 2.45f;
+        System.out.println("--Before swap--");
+        System.out.println("First number = " + first);
+        System.out.println("Second number = " + second);
+        float temporary = first;
+        first = second;
+        second = temporary;
+        System.out.println("--After swap--");
+        System.out.println("First number = " + first);
+        System.out.println("Second number = " + second);
+    }
+}
+
+Output:
+Before swap-
+First number = 1.2
+Second number = 2.45
+--After swap--
+First number = 2.45
+Second number = 1.2
+
+			_____________________________
+
+
+2.Swap two numbers without using temporary variable.
+
+public class SwapNumbers{
+
+    public static void main(String[] args){
+
+        float first = 12.0f, second = 24.5f;
+
+        System.out.println("--Before swap--");
+        System.out.println("First number = " + first);
+        System.out.println("Second number = " + second);
+
+        first = first - second;
+        second = first + second;
+        first = second - first;
+
+        System.out.println("--After swap--");
+        System.out.println("First number = " + first);
+        System.out.println("Second number = " + second);
+    }
+}
+
+Output: 
+ --Before swap-- 
+ First number = 12.0 
+ Second number = 24.5 
+ --After swap--
+First number = 24.5 Second number = 12.0
+
+				____________________
+
+3. Check whether a number is even or odd using ternary operator
+   Enter a number: 13
+
+import java.util.Scanner;
+
+public class EvenOdd {
+
+    public static void main(String[] args) {
+
+        Scanner reader = new Scanner(System.in);
+
+        System.out.print("Enter a number: ");
+        int num = reader.nextInt();
+
+        if(num % 2 == 0)
+            System.out.println(num + " is even");
+        else
+            System.out.println(num + " is odd");
+    }
+}
+
+Output: 
+Enter a number: 13
+13 is odd
+
+			______________________________
+
+
+
+4. Check whether an alphabet is vowel or consonant using if..else statement.
+
+public class VowelConsonant {
+
+    public static void main(String[] args) {
+
+         char ch = 'i'; 
+        
+
+        if(ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u' )
+            System.out.println(ch + " is vowel");
+        else
+            System.out.println(ch + " is consonant");
+
+    }
+}
+
+Output: 
+Enter a character : i
+i is vowel
+
+			________________________
+
+
+
+5. Check whether an alphabet is vowel or consonant using switch statement
+Enter a character : i  i is vowel
+
+public class VowelConsonant {
+
+    public static void main(String[] args) {
+
+        char ch = 'i';
+
+        switch (ch) {
+            case 'a':
+            case 'e':
+            case 'i':
+            case 'o':
+            case 'u':
+                System.out.println(ch + " is vowel");
+                break;
+            default:
+                System.out.println(ch + " is consonant");
+        }
+    }
+}
+Output: 
+Enter a character : i
+i is vowel
+
+			__________________
+
+
+
+6. Find Largest Among three numbers using if..else statement
+
+import java.util.Scanner; 
+public class Largest {
+
+    public static void main(String[] args) {
+
+        int n1, n2, n3;  
+        Scanner sc = new Scanner(System.in);  
+
+        System.out.println("Enter the first number:");  
+        n1 = sc.nextInt();  
+        System.out.println("Enter the second number:");  
+        n2 = sc.nextInt();  
+        System.out.println("Enter the third number:");  
+        n3 = sc.nextInt();  
+        if( n1 >= n2 && n1 >= n3)
+            System.out.println(n1 + " is the largest number.");
+
+        else if (n2 >= n1 && n2 >= n3)
+            System.out.println(n2 + " is the largest number.");
+
+        else
+            System.out.println(n3 + " is the largest number.");
+    }
+}
+
+
+Output:
+Enter Number 1 : 1.2
+Enter Number 2 : 1.8
+Enter Number 3 : 3.9
+3.9 is the largest number.
+
+				__________________
+
+
+7. Find the largest number among three using nested if..else statement
+
+import java.util.Scanner; 
+public class Largest {
+
+    public static void main(String[] args) {
+
+       int n1, n2, n3;  
+        Scanner sc = new Scanner(System.in);  
+
+        System.out.println("Enter the first number:");  
+        n1 = sc.nextInt();  
+        System.out.println("Enter the second number:");  
+        n2 = sc.nextInt();  
+        System.out.println("Enter the third number:");  
+        n3 = sc.nextInt();  
+
+        if(n1 >= n2) {
+            if(n1 >= n3)
+                System.out.println(n1 + " is the largest number.");
+            else
+                System.out.println(n3 + " is the largest number.");
+        } else {
+            if(n2 >= n3)
+                System.out.println(n2 + " is the largest number.");
+            else
+                System.out.println(n3 + " is the largest number.");
+        }
+    }
+}
+
+Output: 
+Enter Number 1 : 1.2
+Enter Number 2 : 1.8
+Enter Number 3 : 3.9
+3.9 is the largest number.
+
+		____________________________________
+
+
+8. Java Program to Find Roots of a Quadratic Equation.
+ 
+import java.util.Scanner;
+public class Main {
+
+  public static void main(String[] args) {
+      
+    double a, b, c;
+    double root1, root2;
+
+        Scanner sc = new Scanner(System.in);  
+
+        System.out.println("Enter the value:");  
+        a = sc.nextDouble();  
+        System.out.println("Enter the value:");  
+        b = sc.nextDouble();  
+        System.out.println("Enter the value:");  
+        c = sc.nextDouble();  
+
+    double determinant = b * b - 4 * a * c;
+    if (determinant > 0) {
+      root1 = (-b + Math.sqrt(determinant)) / (2 * a);
+      root2 = (-b - Math.sqrt(determinant)) / (2 * a);
+
+      System.out.format("root1 = %.2f and root2 = %.2f", root1, root2);
+    }
+    
+    else if (determinant == 0) {
+        
+      root1 = root2 = -b / (2 * a);
+      System.out.format("root1 = root2 = %.2f;", root1);
+    }
+
+    else {
+      double real = -b / (2 * a);
+      double imaginary = Math.sqrt(-determinant) / (2 * a);
+      System.out.format("root1 = %.2f+%.2fi", real, imaginary);
+      System.out.format("\nroot2 = %.2f-%.2fi", real, imaginary);
+    }
+  }
+}
+
+Output: 
+Enter Value of A : 2.3
+Enter Value of B : 4
+Enter Value of C : 5.6
+root1 = -0.87+1.30i 
+root2 = -0.87-1.30i
+
+                   __________________________________
+
+
+9. Check if a Number is Positive or Negative using if else.
+
+import java.util.Scanner; 
+public class PositiveNegative {
+
+    public static void main(String[] args) {
+
+        double number;  
+        Scanner sc = new Scanner(System.in);  
+        System.out.println("Enter the first number:");  
+        number = sc.nextDouble();  
+
+        if (number < 0.0)
+            System.out.println(number + " is a negative number.");
+
+        else if ( number > 0.0)
+            System.out.println(number + " is a positive number.");
+
+        else
+            System.out.println(number + " is 0.");
+    }
+}
+
+Output:
+Enter a Number : 12.3 
+12.3 is a positive number.
+
+			___________________________
+
+
+
+10. Java Program to Check Alphabet using if else.
+
+
+import java.util.Scanner; 
+public class Alphabet {
+
+    public static void main(String[] args) {
+
+        char c;  
+        Scanner sc = new Scanner(System.in);  
+        System.out.println("Enter the Character:");  
+        c=sc.next().charAt(0);   
+
+        if( (c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
+            System.out.println(c + " is an alphabet.");
+        else
+            System.out.println(c + " is not an alphabet.");
+    }
+}
+
+Output:
+Enter a character : *
+* is not an alphabet
+Enter a character : a
+a is an alphabet
+
+			_____________________________
+
+
+
