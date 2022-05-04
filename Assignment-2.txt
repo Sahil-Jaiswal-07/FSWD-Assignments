@@ -1,0 +1,320 @@
+
+1. Java Program to Check Alphabet using ternary operator "A" is an alphabet.
+
+public class Alphabet {
+    
+public static void main(String[] args) {
+
+        char c = 'A';
+        
+        String output = (c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z')
+                ? c + " is an alphabet."
+                : c + " is not an alphabet.";
+        
+        System.out.println(output);
+    }
+}
+
+Output:
+
+A is an alphabet
+
+2. Java Program to Check Alphabet using isAlphabetic() Method "a" is an alphabet.
+
+class Main {
+  public static void main(String[] args) {
+
+    char c = 'a';
+
+    if (Character.isAlphabetic(c)) {
+      System.out.println(c + " is an alphabet.");
+    }
+    else {
+      System.out.println(c + " is not an alphabet.");
+    }
+  }
+}
+
+Output:
+
+a is an alphabet
+
+                      ___________________________
+
+
+3. Sum of Natural Numbers using for loop. 
+
+
+public class SumNatural {
+
+    public static void main(String[] args) {
+
+        int num = 100, sum = 0;
+
+        for(int i = 1; i <= num; ++i)
+        {
+            // sum = sum + i;
+            sum += i;
+        }
+
+        System.out.println("Sum = " + sum);
+    }
+}
+
+Output:
+Enter a limit : 100
+Sum = 5050
+
+			_________________________________
+
+
+
+4. Sum of Natural Numbers using while loop.
+
+public class SumNatural {
+
+    public static void main(String[] args) {
+
+        int num = 100, i = 1, sum = 0;
+
+        while(i <= num)
+        {
+            sum += i;
+            i++;
+        }
+
+        System.out.println("Sum = " + sum);
+    }
+}
+
+Output:
+Enter a limit : 100
+Sum = 5050
+
+			________________________________
+
+
+5. Find Factorial of a number using for loop.
+
+public class JavaExample {
+
+    public static void main(String[] args) {
+
+        int number = 10;
+        long fact = 1;
+        for(int i = 1; i <= number; i++)
+        {
+            fact = fact * i;
+        }
+        System.out.println("Factorial of "+number+" is: "+fact);
+    }
+}
+
+Output:
+Enter a number : 10
+Factorial of 10 = 3628800
+
+
+			____________________________
+
+
+6. Find Factorial of a number using BigInteger.
+
+
+import java.math.BigInteger;
+public class BI {
+    public static void main(String[] args) {
+        
+          System.out.println(factorial(30));
+    }
+    public static BigInteger factorial(int N)
+    {
+         System.out.println("Factorial of given number 30 is ");
+        BigInteger f = new BigInteger("1");
+        for (int i = 2; i <= N; i++)
+            f = f.multiply(BigInteger.valueOf(i));
+        return f;
+    }
+}
+
+Output:
+Enter number 30
+Factorial of given number is 
+265252859812191058636308480000000
+
+			_________________________________
+
+
+7. Find Factorial of a number using while loop.
+
+public class Factorial {
+
+    public static void main(String[] args) {
+
+        int num = 10, i = 1;
+        long factorial = 1;
+        while(i <= num)
+        {
+            factorial *= i;
+            i++;
+        }
+        System.out.printf("Factorial of %d = %d", num, factorial);
+    }
+}
+
+Output:
+Enter a number: 10
+Factorial of 10 = 3628800
+
+			_______________________
+
+
+8. Generate Multiplication Table using for loop.
+
+import java.util.Scanner;
+public class MultiplicationTable {
+
+    public static void main(String[] args) {
+         
+        int num;
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter a number:");  
+        num = sc.nextInt();  
+        for(int i = 1; i <= 10; ++i)
+        {
+            System.out.printf("%d * %d = %d \n", num, i, num * i);
+        }
+    }
+}
+
+Output:
+Enter a number : 5
+5 * 1 = 5
+5 * 2 = 10 
+5 * 3 = 15 
+5 * 4 = 20 
+5 * 5 = 25 
+5 * 6 = 30 
+5 * 7 = 35 
+5 * 8 = 40 
+5 * 9 = 45 
+5 * 10 = 50
+
+		________________________
+
+
+9. Generate Multiplication Table using while loop.
+
+public class MultiplicationTable {
+
+    public static void main(String[] args) {
+
+        int num = 5, i = 1;
+        while(i <= 10)
+        {
+            System.out.printf("%d * %d = %d \n", num, i, num * i);
+            i++;
+        }
+    }
+}
+
+Output:
+Enter a number : 5
+5* 1 = 5 
+5 * 2 = 10 
+5 * 3 = 15 
+5 * 4 = 20 
+5* 5 = 25 
+5 * 6 = 30 
+5* 7 = 355 * 8 = 40 
+5* 9 = 455 * 10 = 50 
+
+		
+		___________________________
+
+
+10. Display Fibonacci Series Using for Loop.
+
+class Main {
+  public static void main(String[] args) {
+
+    int n = 10, firstTerm = 0, secondTerm = 1;
+    System.out.println("Fibonacci Series till " + n + " terms:");
+
+    for (int i = 1; i <= n; ++i) {
+      System.out.print(firstTerm + ", ");
+
+      int nextTerm = firstTerm + secondTerm;
+      firstTerm = secondTerm;
+      secondTerm = nextTerm;
+    }
+  }
+}
+
+Output:
+Enter the limit : 10
+Fibonacci Series till 10 terms: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34,
+
+			_______________________________
+
+
+11. Display Fibonacci series using while loop.
+
+class Main {
+  public static void main(String[] args) {
+
+    int i = 1, n = 10, firstTerm = 0, secondTerm = 1;
+    System.out.println("Fibonacci Series till " + n + " terms:");
+
+    while (i <= n) {
+      System.out.print(firstTerm + ", ");
+
+      int nextTerm = firstTerm + secondTerm;
+      firstTerm = secondTerm;
+      secondTerm = nextTerm;
+
+      i++;
+    }
+  }
+}
+
+Output:
+Enter the limit : 10
+Fibonacci Series till 10 terms: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34,
+
+			_________________________________
+
+
+12. Display Fibonacci series up to a given number.
+
+import java.util.scanner;
+public class Fibonacci {
+  public static void main(String[] args) {
+
+    int count, num1 = 0, num2 = 1;
+    system.out.println("Enter the limit:");
+    Scanner scanner = new Scanner(System.in);
+    count scanner.nextint();
+    scanner.close();
+
+        
+    System.out.println("Fibonacci Series till" + count + terms ": ");
+    
+    int i=1;
+    while (num1 <= n) {
+      System.out.print(num1 + ", ");
+
+      int nextnum = firstTerm + secondTerm;
+      num1 = num2;
+      num2 = nextnum;
+      i++;
+
+    }
+  }
+}
+
+Output:
+Enter the limit : 25
+Fibonacci Series till 10 terms: 0, 1, 1, 2, 3, 5, 8, 13, 21,
+
+			____________________________
