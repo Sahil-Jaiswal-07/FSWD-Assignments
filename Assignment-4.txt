@@ -1,0 +1,346 @@
+01. Calculate power of a number using a while loop
+
+import java.util.Scanner;
+class Main {
+  public static void main(String[] args) {
+
+    int base, power;  
+    Scanner sc = new Scanner(System.in);  
+    System.out.print("Enter base: ");  
+    base = sc.nextInt();     
+    System.out.print("Enter power: ");  
+    power = sc.nextInt();  
+    
+    long result = 1;
+
+    while (power != 0) {
+      result *= base;
+      --power;
+    }
+
+    System.out.println("Answer = " + result);
+  }
+}
+
+Output: 
+Enter Base : 4
+Enter Power : 2
+4^2 = 16
+
+			______________________________________________________
+
+02. Calculate the power of a number using a for loop
+
+import java.util.Scanner;
+class Main {
+  public static void main(String[] args) {
+
+    int base, power;  
+    Scanner sc = new Scanner(System.in);  
+    System.out.print("Enter base: ");  
+    base = sc.nextInt();     
+    System.out.print("Enter power: ");  
+    power = sc.nextInt();  
+    
+    long result = 1;
+
+    for (; power != 0; --power) {
+      result *= base;
+    }
+
+    System.out.println("Answer = " + result);
+  }
+}
+
+Output: 
+Enter Base : 4
+Enter Power : 2
+4^2 = 16
+
+			______________________________________________________
+
+03. Calculate the power of a number using pow() function
+
+import java.util.Scanner;
+class Main {
+  public static void main(String[] args) {
+
+    int base, power;  
+    Scanner sc = new Scanner(System.in);  
+    System.out.print("base: ");  
+    base = sc.nextInt();     
+    System.out.print("Enter power: ");  
+    power = sc.nextInt();  
+    
+    double result = Math.pow(base, power);
+
+    System.out.println("Answer = " + result);
+  }
+}
+
+Output: 
+Enter Base : 4
+Enter Power : 2
+4^2 = 16
+
+			______________________________________________________
+
+04. Compute Power of Negative Number
+
+import java.util.Scanner;
+class Main {
+  public static void main(String[] args) {
+
+    int base, power;  
+    Scanner sc = new Scanner(System.in);  
+    System.out.print("Enter base: ");  
+    base = sc.nextInt();     
+    System.out.print("Enter power: ");  
+    power = sc.nextInt();  
+    
+     double result = Math.pow(base, power);
+    System.out.println("Answer = " + result);
+  }
+}
+
+Output:
+Enter Base : -4
+Enter Power : 2
+4^2 = 16
+
+Enter Base : -4
+Enter Power : 3
+4^2 = -64
+
+			______________________________________________________
+
+
+05. Java Program to Check Palindrome String
+
+import java.util.Scanner;
+class Main {
+  public static void main(String[] args) {
+
+   String str, reverseStr = "";
+    
+    Scanner sc = new Scanner(System.in);  
+    System.out.print("Enter the string: ");  
+    str = sc.nextLine();
+    
+    int strLength = str.length();
+
+    for (int i = (strLength - 1); i >=0; --i) {
+      reverseStr = reverseStr + str.charAt(i);
+    }
+
+    if (str.toLowerCase().equals(reverseStr.toLowerCase())) {
+      System.out.println(str + " is a Palindrome String.");
+    }
+    else {
+      System.out.println(str + " is not a Palindrome String.");
+    }
+  }
+}
+
+Output: 
+Enter a String : ABCBA
+It is a pallindrom String
+
+			______________________________________________________
+
+
+06. Java Program to Check Palindrome Number
+
+import java.util.Scanner;
+class Main {
+  public static void main(String[] args) {
+    
+    int num, reversedNum = 0, remainder;
+    
+    Scanner sc = new Scanner(System.in);  
+    System.out.print("Enter the Number: ");  
+    num = sc.nextInt();
+    
+    int originalNum = num;
+     while (num != 0) {
+      remainder = num % 10;
+      reversedNum = reversedNum * 10 + remainder;
+      num /= 10;
+    }
+    
+    // check if reversedNum and originalNum are equal
+    if (originalNum == reversedNum) {
+      System.out.println(originalNum + " is Palindrome.");
+    }
+    else {
+      System.out.println(originalNum + " is not Palindrome.");
+    }
+  }
+} 
+
+Output:
+Enter a number : 1221
+It is a pallindrom number
+
+			______________________________________________________
+
+
+07. Program to Check Prime Number using a for loop.
+
+import java.util.Scanner;
+class Main {
+  public static void main(String[] args) {
+
+    int num;  
+    Scanner sc = new Scanner(System.in);  
+    System.out.print("Enter the number: ");  
+    num = sc.nextInt();     
+   
+    
+    boolean flag = false;
+    for (int i = 2; i <= num / 2; ++i) {
+      
+      if (num % i == 0) {
+        flag = true;
+        break;
+      }
+    }
+
+    if (!flag)
+      System.out.println(num + " is a prime number.");
+    else
+      System.out.println(num + " is not a prime number.");
+  }
+}
+
+Output: 
+Enter a number : 9 
+9 is not prime
+Enter a number : 7
+7 is prime
+
+			______________________________________________________
+
+
+08. Program to Check Prime Number using a while loop.
+
+import java.util.Scanner;
+class Main {
+  public static void main(String[] args) {
+
+    int num, i=2;  
+    Scanner sc = new Scanner(System.in);  
+    System.out.print("Enter the number: ");  
+    num = sc.nextInt();     
+    
+    boolean flag = false;
+    while (i <= num / 2) 
+    {
+      if (num % i == 0) {
+        flag = true;
+        break;
+      }
+
+      ++i;
+    }
+
+    if (!flag)
+      System.out.println(num + " is a prime number.");
+    else
+      System.out.println(num + " is not a prime number.");
+  }
+}
+
+Output: 
+Enter a number : 9 
+9 is not prime
+
+Enter a number : 7
+7 is prime
+
+			______________________________________________________
+
+
+09. Display Prime Numbers Between Two Intervals.
+
+import java.util.Scanner;
+class Main {
+  public static void main(String[] args) {
+
+    int low, high;  
+    Scanner sc = new Scanner(System.in);  
+    System.out.print("Enter the Number: ");  
+    low = sc.nextInt();     
+    System.out.print("Enter the Number: ");  
+    high = sc.nextInt();
+    
+     while (low < high) {
+            boolean flag = false;
+
+            for(int i = 2; i <= low/2; ++i) {
+                // condition for nonprime number
+                if(low % i == 0) {
+                    flag = true;
+                    break;
+                }
+            }
+
+            if (!flag && low != 0 && low != 1)
+                System.out.print(low + " ");
+
+            ++low;
+        }
+    }
+}
+
+Output:
+Enter Starting NUmber : 1
+Enter Ending NUmber : 12
+
+Prime numbers:
+2, 3, 5, 7, 11
+
+			______________________________________________________
+
+
+10. Special : Ask User to input a number and check if its prime or not and you ask for the number till user enters a prime number.
+
+import java.util.Scanner;
+ 
+public class Main {
+ 
+public static void main(String[] args) {
+Scanner s = new Scanner(System.in);
+System.out.print("Enter a number : ");
+int n = s.nextInt();
+if (isPrime(n)) {
+System.out.println(n + " is a prime number");
+} else {
+System.out.println(n + " is not a prime number");
+}
+}
+ 
+public static boolean isPrime(int n) {
+if (n<= 1) {
+return false;
+}
+for (int i = 2; i< n; i++) {
+if (n % i == 0) {
+return false;
+}
+}
+return true;
+}
+}
+
+O/P : 
+Enter a number : 4
+4 is not prime 
+Enter a number : 6
+6 is not prime 
+Enter a number : 8
+8 is not prime 
+Enter a number : 11
+11 is prime
+
+			______________________________________________________
